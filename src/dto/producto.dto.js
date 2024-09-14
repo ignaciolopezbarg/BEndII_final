@@ -1,6 +1,6 @@
 class FunkoDTO{
 
-    constructor(nombre, categoria, descripcion, precio, stock, codigo){
+    constructor(nombre, categoria, descripcion, precio, stock, codigo) {
         this.nombre = nombre;
         this.categoria = categoria;
         this.fullname = `${nombre}${categoria}`;
