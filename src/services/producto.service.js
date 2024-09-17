@@ -1,5 +1,5 @@
 import ProductoRepository from "../repository/ProductoRepository.js";
-import DAO from "../dao/factory.js"; 
+import ProductDto from '../dto/product.dto.js' 
 
 class ProductoService {
     constructor(productoRepository) {
