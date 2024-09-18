@@ -1,4 +1,2 @@
 node_modules
-.env.desarrollo
-.env.produccion
-.env.persistence
+.env

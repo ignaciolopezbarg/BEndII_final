@@ -3,6 +3,8 @@ import exphbs from 'express-handlebars';
 import passport from 'passport';
 import cookieParser from 'cookie-parser';
 import initializePassport from './config/config.js'
+// import { Server } from 'socket.io';
+import dotenv from 'dotenv';
 import './database.js';
 
 import productsRouter from './routes/products.router.js';
@@ -10,10 +12,13 @@ import productsRouter from './routes/products.router.js';
 import viewsRouter from "./routes/views.router.js";
 import sessionRouter from "./routes/session.router.js";
 
-const app = express();
-//const PORT = process.env.PORT || 3000; 
-const PORT = 8080; 
+dotenv.config();
 
+const app = express();
+const PORT = process.env.PORT || 3000; 
+ 
+
+// const io = new Server(httpServer);
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
@@ -30,5 +35,19 @@ app.use("/api/products", productsRouter);
 //app.use("/api/carts", cartsRouter);
 app.use("/api/sessions", sessionRouter);
 app.use("/", viewsRouter);
+
+// io.on('connection', (socket) => {
+//     console.log('New client connected');
+    
+//     socket.on('disconnect', () => {
+//       console.log('Client disconnected');
+//     });
+//   });
+  
+//   httpServer.listen(PORT, () => {
+//     console.log(`Server is listening on port ${PORT}`);
+//   });
+
+
 
 app.listen (PORT, () => console.log( `Server on port ${PORT}`))

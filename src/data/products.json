@@ -1,83 +1,156 @@
- [
-      {
-        "nombre": "Iron Man",
-        "categoria": "Marvel",
-        "descripcion": "Tony Stark en su icónica armadura roja y dorada",
-        "precio": 15.99,
-        "stock": 50,
-        "codigo": "MRVL1A2B3C"
-      },
-      {
-        "nombre": "Darth Vader",
-        "categoria": "Star Wars",
-        "descripcion": "El icónico Señor Oscuro de los Sith",
-        "precio": 17.99,
-        "stock": 40,
-        "codigo": "STRW4D5E6F"
-      },
-      {
-        "nombre": "Harry Potter",
-        "categoria": "Wizarding World",
-        "descripcion": "El famoso mago con su varita y cicatriz",
-        "precio": 14.99,
-        "stock": 60,
-        "codigo": "WZRD7G8H9I"
-      },
-      {
-        "nombre": "Pikachu",
-        "categoria": "Pokémon",
-        "descripcion": "El adorable Pokémon eléctrico",
-        "precio": 13.99,
-        "stock": 70,
-        "codigo": "PKMN1J2K3L"
-      },
-      {
-        "nombre": "Wonder Woman",
-        "categoria": "DC Comics",
-        "descripcion": "La poderosa princesa amazona",
-        "precio": 16.99,
-        "stock": 45,
-        "codigo": "DCCO4M5N6O"
-      },
-      {
-        "nombre": "Eleven",
-        "categoria": "Stranger Things",
-        "descripcion": "La chica con poderes psíquicos",
-        "precio": 15.99,
-        "stock": 55,
-        "codigo": "STRG7P8Q9R"
-      },
-      {
-        "nombre": "Groot",
-        "categoria": "Marvel",
-        "descripcion": "El adorable árbol parlante de Guardianes de la Galaxia",
-        "precio": 14.99,
-        "stock": 65,
-        "codigo": "MRVL2S3T4U"
-      },
-      {
-        "nombre": "Jon Snow",
-        "categoria": "Game of Thrones",
-        "descripcion": "El Rey en el Norte con su espada Longclaw",
-        "precio": 18.99,
-        "stock": 35,
-        "codigo": "GOTH5V6W7X"
-      },
-      {
-        "nombre": "Mickey Mouse",
-        "categoria": "Disney",
-        "descripcion": "El ratón más famoso del mundo",
-        "precio": 12.99,
-        "stock": 80,
-        "codigo": "DSNY8Y9Z0A"
-      },
-      {
-        "nombre": "Freddie Mercury",
-        "categoria": "Música",
-        "descripcion": "El legendario cantante de Queen en su icónico traje amarillo",
-        "precio": 19.99,
-        "stock": 30,
-        "codigo": "MUSC1B2C3D"
-      }
-    ]
+[
+  {
+    "title": "Spider-Man",
+    "description": "Spider-Man Funko Pop de Marvel",
+    "price": 12.99,
+    "img": "",
+    "code": "SPIDERMAN001",
+    "stock": 50,
+    "category": "Superheroes",
+    "status": true
+  },
+  {
+    "title": "Iron Man",
+    "description": "Iron Man Funko Pop de Marvel",
+    "price": 14.99,
+    "img": "",
+    "code": "IRONMAN001",
+    "stock": 45,
+    "category": "Superheroes",
+    "status": true
+  },
+  {
+    "title": "Batman",
+    "description": "Batman Funko Pop de DC Comics",
+    "price": 13.99,
+    "img": "",
+    "code": "BATMAN001",
+    "stock": 60,
+    "category": "Superheroes",
+    "status": true
+  },
+  {
+    "title": "Wonder Woman",
+    "description": "Wonder Woman Funko Pop de DC Comics",
+    "price": 13.49,
+    "img": "",
+    "code": "WONDERWOMAN001",
+    "stock": 40,
+    "category": "Superheroes",
+    "status": true
+  },
+  {
+    "title": "Harry Potter",
+    "description": "Harry Potter Funko Pop de la serie Harry Potter",
+    "price": 11.99,
+    "img": "",
+    "code": "HARRYPOTTER001",
+    "stock": 55,
+    "category": "Películas",
+    "status": true
+  },
+  {
+    "title": "Darth Vader",
+    "description": "Darth Vader Funko Pop de Star Wars",
+    "price": 15.99,
+    "img": "",
+    "code": "DARTHVADER001",
+    "stock": 35,
+    "category": "Películas",
+    "status": true
+  },
+  {
+    "title": "Luke Skywalker",
+    "description": "Luke Skywalker Funko Pop de Star Wars",
+    "price": 13.49,
+    "img": "",
+    "code": "LUKESKYWALKER001",
+    "stock": 42,
+    "category": "Películas",
+    "status": true
+  },
+  {
+    "title": "Hermione Granger",
+    "description": "Hermione Granger Funko Pop de Harry Potter",
+    "price": 12.49,
+    "img": "",
+    "code": "HERMIONE001",
+    "stock": 58,
+    "category": "Películas",
+    "status": true
+  },
+  {
+    "title": "Goku",
+    "description": "Goku Funko Pop de Dragon Ball Z",
+    "price": 13.99,
+    "img": "",
+    "code": "GOKU001",
+    "stock": 30,
+    "category": "Anime",
+    "status": true
+  },
+  {
+    "title": "Vegeta",
+    "description": "Vegeta Funko Pop de Dragon Ball Z",
+    "price": 14.49,
+    "img": "",
+    "code": "VEGETA001",
+    "stock": 33,
+    "category": "Anime",
+    "status": true
+  },
+  {
+    "title": "Naruto Uzumaki",
+    "description": "Naruto Funko Pop de Naruto",
+    "price": 12.99,
+    "img": "",
+    "code": "NARUTO001",
+    "stock": 47,
+    "category": "Anime",
+    "status": true
+  },
+  {
+    "title": "Sasuke Uchiha",
+    "description": "Sasuke Funko Pop de Naruto",
+    "price": 13.99,
+    "img": "",
+    "code": "SASUKE001",
+    "stock": 39,
+    "category": "Anime",
+    "status": true
+  },
+  {
+    "title": "Yoda",
+    "description": "Yoda Funko Pop de Star Wars",
+    "price": 12.49,
+    "img": "",
+    "code": "YODA001",
+    "stock": 40,
+    "category": "Películas",
+    "status": true
+  },
+  {
+    "title": "Captain America",
+    "description": "Captain America Funko Pop de Marvel",
+    "price": 14.99,
+    "img": "",
+    "code": "CAPTAINAMERICA001",
+    "stock": 50,
+    "category": "Superheroes",
+    "status": true
+  },
+  {
+    "title": "Thor",
+    "description": "Thor Funko Pop de Marvel",
+    "price": 14.49,
+    "img": "",
+    "code": "THOR001",
+    "stock": 44,
+    "category": "Superheroes",
+    "status": true
+  }
+]
+
+
+
   
