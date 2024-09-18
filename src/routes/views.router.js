@@ -5,6 +5,7 @@ import CartManager from "../dao/db/cart-manager-db.js";
 
 const productManager = new ProductManager();
 const cartManager = new CartManager();
+
 import { soloAdmin, soloUser } from "../middleware/auth.js";
 import passport from "passport";
 
