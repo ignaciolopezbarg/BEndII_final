@@ -1,9 +1,8 @@
 import mongoose from 'mongoose';
-// import configObject from './config/config.js';
-// const{ mongo_url }= configObject;
+import dotenv from 'dotenv';
 
-mongoose.connect('mongodb+srv://nacho:holanacho@cluster0.g6mfb4u.mongodb.net/entregaFinalBE2?retryWrites=true&w=majority&appName=Cluster0')
-
-.then(() => console.log('Conectados a la BD'))
-.catch((error) =>console.log('Error al conectarnos :', error))
-
+// Cargo las variables de entorno desde el archivo .env
+dotenv.config();
+mongoose.connect(process.env.MONGO_URL)
+  .then(() => console.log('Conectados a la BD'))
+  .catch((error) => console.log('Error al conectarnos:', error));
