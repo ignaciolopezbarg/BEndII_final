@@ -2,7 +2,7 @@ import userService from "../services/user.service.js";
 import jwt from "jsonwebtoken";
 import UserDTO from "../dto/user.dto.js";
 
-class UserController {
+class userController {
     async register(req, res) {
         const {first_name, last_name, email, age, password} = req.body; 
 
@@ -56,4 +56,4 @@ class UserController {
     }
 }
 
-export default new UserController(); 
+export default new userController(); 
