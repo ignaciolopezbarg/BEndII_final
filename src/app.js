@@ -7,9 +7,12 @@ import initializePassport from './config/config.js'
 import dotenv from 'dotenv';
 import './database.js';
 
+import ProductRepository from './repositories/product.repository.js';
+import CartRepository from './repositories/cart.repository.js';
+
 import productsRouter from './routes/products.router.js';
-//import cartsRouter from "./routes/carts.router.js";
-import viewsRouter from "./routes/views.router.js";
+import cartsRouter from "./routes/carts.router.js";
+//import viewsRouter from "./routes/views.router.js";
 import sessionRouter from "./routes/session.router.js";
 
 dotenv.config();
@@ -32,9 +35,9 @@ app.set("view engine", "handlebars");
 app.set("views", "./src/views");
 
 app.use("/api/products", productsRouter);
-//app.use("/api/carts", cartsRouter);
+app.use("/api/carts", cartsRouter);
 app.use("/api/sessions", sessionRouter);
-app.use("/", viewsRouter);
+//app.use("/", viewsRouter);
 
 // io.on('connection', (socket) => {
 //     console.log('New client connected');

@@ -2,7 +2,7 @@ import express from "express";
 const router = express.Router();
 import CartManager from "../dao/db/cart-manager-db.js";
 const cartManager = new CartManager();
-import CartModel from "../dao/models/cart.model.js";
+import CartModel from "../models/cart.model.js";
 
 //Nuevo carrito
 
@@ -56,9 +56,9 @@ router.post("/:cid/product/:pid", async (req, res) => {
   }
 });
 //Compra
-import ProductModel from "../dao/models/product.model.js";
-import UsuarioModel from "../dao/models/usuarios.model.js";
-import TicketModel from "../dao/models/tickets.model.js";
+import ProductModel from "../models/product.model.js";
+import UsuarioModel from "../models/usuarios.model.js";
+import TicketModel from "../models/tickets.model.js";
 import calcularTotal  from "../utils/calcularTotal.js";
 
 router.get("/:cid/purchase", async (req, res) => {
