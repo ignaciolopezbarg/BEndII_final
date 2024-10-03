@@ -1,16 +1,3 @@
-// class ProductoRepository{
-//     constructor(dao){
-//         this.dao = dao;
-//     }
-//     async obtenerFunkos(){
-//         return this.dao.obtenerFunkos()
-//     }
-//     async crearFunko(producto){
-//         return this.dao.crearFunko(producto);
-//     }
-// }
-// export default ProductoRepository;
-
 import ProductDAO from '../dao/productDAO.js';
 
 class ProductRepository {
