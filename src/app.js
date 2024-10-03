@@ -6,12 +6,13 @@ import cookieParser from 'cookie-parser';
 import initializePassport from './config/config.js';
 import jwt from 'jsonwebtoken';
 import { soloAdmin, soloUser } from './middleware/auth.js';
+//import { authRol } from './middleware/auth.js';
 import { Server } from 'socket.io';
 import dotenv from 'dotenv';
 import './database.js';
 
-import ProductRepository from './repositories/product.repository.js';
-import CartRepository from './repositories/cart.repository.js';
+//import ProductRepository from './repositories/product.repository.js';
+//import CartRepository from './repositories/cart.repository.js';
 import productsRouter from './routes/products.router.js';
 import cartsRouter from "./routes/carts.router.js";
 import viewsRouter from "./routes/views.router.js";
@@ -41,18 +42,19 @@ app.use("/api/carts", cartsRouter);
 app.use("/api/sessions", sessionRouter);
 app.use("/", viewsRouter);
 
-// io.on('connection', (socket) => {
-//     console.log('New client connected');
+io.on('connection', (socket) => {
+    console.log('New client connected');
     
-//     socket.on('disconnect', () => {
-//       console.log('Client disconnected');
-//     });
-//   });
+    socket.on('disconnect', () => {
+      console.log('Client disconnected');
+    });
+  });
   
-//   httpServer.listen(PORT, () => {
-//     console.log(`Server is listening on port ${PORT}`);
-//   });
+  httpServer.listen(PORT, () => {
+    console.log(`Server is listening on port ${PORT}`);
+  });
 
 
 
-app.listen (PORT, () => console.log( `Server on port ${PORT}`))
+
+  
