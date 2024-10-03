@@ -12,7 +12,7 @@ class UserController {
             const token = jwt.sign({
                 usuario: `${nuevoUsuario.first_name} ${nuevoUsuario.last_name}`,
                 email: nuevoUsuario.email,
-                role: nuevoUsuario.rol
+                rol: nuevoUsuario.rol
             }, "coderhouse", {expiresIn: "1h"});
 
             res.cookie("coderCookieToken", token, {maxAge: 3600000, httpOnly: true});
@@ -30,7 +30,7 @@ class UserController {
             const token = jwt.sign({
                 usuario: `${user.first_name} ${user.last_name}`,
                 email: user.email,
-                role: user.rol
+                rol: user.rol
             }, "coderhouse", {expiresIn: "1h"});
 
             res.cookie("coderCookieToken", token, {maxAge: 3600000, httpOnly: true});

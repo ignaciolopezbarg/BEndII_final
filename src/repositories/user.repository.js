@@ -1,7 +1,9 @@
 import UserDao from "../dao/user.dao.js";
+
 class UserRepository {
   async createUser(userData) {
-    return await UserDao.save(userData);
+    const newUser = new UserDao(userData)
+    return await newUser.save();
   }
 
   async getUserById(id) {
