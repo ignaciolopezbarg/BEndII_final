@@ -22,9 +22,10 @@ const usuarioSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  cart: {
+  cart_id: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Carts'
+    ref: 'Carts',
+    required: true
 },
 
   rol: {

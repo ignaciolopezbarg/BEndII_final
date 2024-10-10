@@ -16,4 +16,6 @@ async create(userData){
     return await user.save();
   }
 }
+
 export default new UserDao();
+
