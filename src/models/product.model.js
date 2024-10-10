@@ -15,7 +15,7 @@ const productoSchema = new mongoose.Schema({
         required: true
     },
     img: {
-        type: String, 
+        type: String
     },
     code: {
         type: String, 
@@ -34,6 +34,9 @@ const productoSchema = new mongoose.Schema({
         type: Boolean, 
         required: true
     },
+    thumbnails:{
+        type: [String]
+    }
   
 })
 

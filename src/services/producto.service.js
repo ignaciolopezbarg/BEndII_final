@@ -1,3 +1,6 @@
+
+
+
 import ProductRepository from "../repositories/product.repository.js";
 import ProductDTO from '../dto/product.dto.js' 
 
@@ -48,4 +51,4 @@ class ProductService {
   
   export default new ProductService();
 
-//export const productoService = new ProductoService( new ProductoRepository(DAO)); 
+// //export const productoService = new ProductoService( new ProductoRepository(DAO)); 

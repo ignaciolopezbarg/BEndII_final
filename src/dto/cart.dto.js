@@ -2,10 +2,8 @@ class CartDTO {
     constructor(cart) {
       this.id = cart._id;
       this.products = cart.products.map(item => ({
-        product: item.product._id,
-        title: item.product.title,
+        productId: item.product._id,
         quantity: item.quantity,
-        price: item.product.price,
       }));
     }
   }
