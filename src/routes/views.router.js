@@ -6,7 +6,7 @@ import CartManager from "../dao/db/cart-manager-db.js";
 const productManager = new ProductManager();
 const cartManager = new CartManager();
 
-import { soloAdmin, soloUser } from "../middleware/auth.js";
+import { soloAdmin, soloUser } from "../middleware/authorization.js";
 import passport from "passport";
 
 router.get("/products", passport.authenticate("jwt", {session: false}),  soloUser ,async (req, res) => {

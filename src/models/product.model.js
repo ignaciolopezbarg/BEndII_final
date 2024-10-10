@@ -14,9 +14,6 @@ const productoSchema = new mongoose.Schema({
         type: Number, 
         required: true
     },
-    img: {
-        type: String
-    },
     code: {
         type: String, 
         required: true,
@@ -35,7 +32,8 @@ const productoSchema = new mongoose.Schema({
         required: true
     },
     thumbnails:{
-        type: [String]
+        type: [String],
+        default: []
     }
   
 })

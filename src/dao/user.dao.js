@@ -4,7 +4,7 @@ import UsuarioModel from "../models/usuarios.model.js";
 class UserDao {
 
 async findUserByEmail(email) {
-  return await UsuarioModel.findOne ({ email }).lean();
+  return await UsuarioModel.findOne ({ email });
 }
 
 async create(userData){

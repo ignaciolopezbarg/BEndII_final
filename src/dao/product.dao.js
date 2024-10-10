@@ -1,6 +1,6 @@
 import ProductoModel from "../models/product.model.js";
 class ProductDAO {
-  async crearProducto(datosProducto) {
+  async createProduct(datosProducto) {
     try {
       const producto = new ProductoModel(datosProducto);
       return await producto.save();

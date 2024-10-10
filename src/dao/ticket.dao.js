@@ -1,4 +1,6 @@
 import TicketModel from "../models/tickets.model.js";
+import { v4 as uuidv4 } from 'uuid';
+
 class TicketDao {
     async create ({ amount, purchaser }){
         const ticket = new TicketModel({

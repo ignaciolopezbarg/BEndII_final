@@ -2,12 +2,12 @@ import CartModel from "../models/cart.model.js";
 
 class CartDAO {
   async create() {
-    const newCart = new CartModel({products: []});
+    const newCart = new CartModel({ products: [] });
     return await newCart.save();
   }
 
   async getById(cartId) {
-    return await CartModel.findById(cartId).populate('products.product');
+    return await CartModel.findById(cartId).populate("products.product");
   }
 
   async addProductToCart(cartId, productId) {
@@ -16,13 +16,15 @@ class CartDAO {
     return await cart.save();
   }
 
-  async getCarts(){
+  async getCarts() {
     return await CartModel.find();
   }
 
   async removeProductFromCart(cartId, productId) {
     const cart = await CartModel.findById(cartId);
-    cart.products = cart.products.filter(p => p.product.toString() !== productId.toString());
+    cart.products = cart.products.filter(
+      (p) => p.product.toString() !== productId.toString()
+    );
     return await cart.save();
   }
 
@@ -31,7 +33,10 @@ class CartDAO {
   }
 
   async clearCart(cartId) {
-    return await CartModel.findByIdAndUpdate(cartId, {products: []}, {new: true})
+    const cart = await CartModel.findById(cartId);
+    cart.products = [];
+
+    return await cart.save();
   }
 }
 

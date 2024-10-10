@@ -1,6 +1,3 @@
-
-
-
 import ProductRepository from "../repositories/product.repository.js";
 import ProductDTO from '../dto/product.dto.js' 
 
