@@ -1,12 +1,17 @@
 import UsuarioModel from "../models/usuarios.model.js";
 
 class UserDao {
+
+async findUserByEmail(email) {
+  return await UsuarioModel.findOne ({ email }).lean();
+}
+
 async create(userData){
   const user = new UsuarioModel(userData);
   return await user.save();
 }
   async findById(id) {
-    return await UsuarioModel.findById(id).populate('cart');
+    return await UsuarioModel.findById(id).lean().populate('cart');
   }
   async findOne(query) {
     return await UsuarioModel.findOne(query);

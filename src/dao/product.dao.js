@@ -8,27 +8,43 @@ class ProductDAO {
       throw new Error("Error al crear el producto en mongoDB");
     }
   }
-  // async obtenerProductos() {
-  //   try {
-  //     return await ProductoModel.find();
-  //   } catch (error) {
-  //     throw new Error("Error al obtener los productos de MongoDB");
-  //   }
-  // }
-  async obtenerProductos(filter = {}, options = {}){
-return await ProductoModel.paginate(filter,options);
+
+  async obtenerProductos(filter = {}, options = {}) {
+    try {
+      return await ProductoModel.paginate(filter, options);
+    } catch (error) {
+      console.error("Error al obtener los productos", error);
+      throw error;
+    }
   }
 
-  async findById(productId){
-    return await ProductoModel.findById(productId);
+  async findById(productId) {
+    try {
+      return await ProductoModel.findById(productId);
+    } catch (error) {
+      console.error("Error al buscar producto por Id", error);
+      throw error;
+    }
   }
 
-  async update(productId, updateData){
-    return await ProductoModel.findByIdAndUpdate(productId, updateData, { new: true});
+  async update(productId, updateData) {
+    try {
+      return await ProductoModel.findByIdAndUpdate(productId, updateData, {
+        new: true,
+      });
+    } catch (error) {
+      console.error("Error al actualizar", error);
+      throw error;
+    }
   }
 
-  async delete(productId){
-    return await ProductoModel.findByIdAndDelete(productId);
+  async delete(productId) {
+    try {
+      return await ProductoModel.findByIdAndDelete(productId);
+    } catch (error) {
+      console.error("Error al eliminar producto", error);
+      throw error;
+    }
   }
 }
-export default new ProductDAO;
+export default new ProductDAO();
