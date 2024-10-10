@@ -48,4 +48,3 @@ class ProductService {
   
   export default new ProductService();
 
-// //export const productoService = new ProductoService( new ProductoRepository(DAO)); 

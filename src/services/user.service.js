@@ -1,33 +1,45 @@
 import UserRepository from "../repositories/user.repository.js";
 import CartRepository from "../repositories/cart.repository.js";
-import { createHash, isValidPassword } from "../utils/util.js";
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 
 class UserService {
-  async registerUser(userData) {
-    const existeUsuario = await UserRepository.getUserByEmail(userData.email);
-    if (existeUsuario) throw new Error("El usuario ya existe");
-    userData.password = createHash(userData.password);
-    return await UserRepository.createUser(userData);
-  }
-//   async registerUser(userData) {
-//     const existeUsuario = await UserRepository.getUserByEmail(userData.email); 
-//     if(existeUsuario) throw new Error("El usuario ya existe"); 
-
-//     //Aca le vamos a crear el carrito y se lo vamos a asignar: 
-//     const nuevoCarrito = await CartRepository.createcart(); 
-
-//     //Asignamos el carrito al usuario: 
-//     userData.cart = nuevoCarrito._id;
-//     ////////////////////////////////////////////////////////
-//     userData.password = createHash(userData.password); 
-//     return await UserRepository.createUser(userData); 
-// }
-
-  async loginUser(email, password) {
+  async login(email, password) {
     const user = await UserRepository.getUserByEmail(email);
-    if (!user || !isValidPassword(password, user))
-      throw new Error("Credenciales no validas");
-    return user;
+    if (!user) {
+      throw new Error("Invalid email or password");
+    }
+
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) {
+      throw new Error("Invalid email or password");
+    }
+
+    const token = jwt.sign(
+      { id: user._id, role: user.rol },
+      process.env.JWT_SECRET,
+      { expiresIn: "1h" }
+    );
+    return { token, rol: user.rol };
+  }
+
+  async register(userData) {
+    const existingUser = await UserRepository.getUserByEmail(userData.email);
+    if (existingUser) {
+      throw new Error("User already exists");
+    }
+
+    const newCart = await CartRepository.createCart();
+    const newUser = await UserRepository.createUser({
+      ...userData,
+      cart: newCart._id,
+    });
+
+    return newUser;
+  }
+
+  async getCurrentUser(userId) {
+    return await UserRepository.getUserById(userId);
   }
 }
 
