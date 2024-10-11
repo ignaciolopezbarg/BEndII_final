@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Real Time Products </title>
+</head>
+<body>
+  <h1>Real Time Products</h1>
+
+<ul id="product-list">
+  {{#each products}}
+  <li> ID: {{this.id}}, Title: {{this.title}}, Price: {{this.price}} </li>
+  {{/each}}
+</ul>
+
+<h3>Formulario para agregar Productos</h3>
+    <form id="productoForm">
+    <input type="text" id="title" placeholder="Titulo" required />
+
+    <input type="text" id="description" placeholder="Descripcion" required/>
+
+    <input type="number" id="price" placeholder="Precio" required/>
+
+    <input type="text" id="category" placeholder="Categoria" required />
+
+    <input type="text" id="code" placeholder="Codigo" />
+
+    <input type="number" id="stock" placeholder="Stock" />
+
+    <input type="text" id="category" placeholder="Categoria" />
+
+    <select id="status">
+      <option value="true">Activo</option>
+      <option value="false">Inactivo</option>
+
+    </select>
+
+    <button type="button" id="btnEnviar">Enviar</button>
+    <button type="button" id="btnLimpiar">Limpiar</button>
+  </form>
+
+<div id="contenedorProductos" class="contenedor"></div>
+
+<script src="https://cdn.socket.io/4.7.4/socket.io.min.js"></script>
+<script src="js/realTimeProduct.js"></script>
+</body>
+</html>

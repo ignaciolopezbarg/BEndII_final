@@ -1,110 +1,14 @@
-{{!-- <h1>Registro de Usuarios</h1>
-
-<div
-  class="min-h-screen bg-gray-300 flex flex-col justify-center py-12 sm:px-6 lg:px-8"
->
-  <div class="sm:mx-auto sm:w-full sm:max-w-md">
-    <h1
-      class="text-3xl font-extrabold text-center text-gray-900 mb-6"
-    >Formulario de Registro</h1>
-  </div>
-
-  <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-    <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-      <form action="./api/sessions/register" method="POST" class="space-y-6">
-        <div>
-          <label
-            for="first_name"
-            class="block text-sm font-medium text-gray-700"
-          >
-            First Name
-          </label>
-          <div class="mt-1">
-            <input
-              type="text"
-              name="first_name"
-              required placeholder="nombre"
-              class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 sm:text-sm"
-            />
-          </div>
-        </div>
-
-        <div>
-          <label
-            for="last_name"
-            class="block text-sm font-medium text-gray-700"
-          >
-            Last Name
-          </label>
-          <div class="mt-1">
-            <input
-              type="text"
-              name="last_name"
-              required placeholder="apellido"
-              class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 sm:text-sm"
-            />
-          </div>
-        </div>
-
-        <div>
-          <label for="email" class="block text-sm font-medium text-gray-700">
-            Email
-          </label>
-          <div class="mt-1">
-            <input
-              type="email"
-              name="email"
-              required placeholder="email"
-              class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 sm:text-sm"
-            />
-          </div>
-        </div>
-
-        <div>
-          <label for="password" class="block text-sm font-medium text-gray-700">
-            Password
-          </label>
-          <div class="mt-1">
-            <input
-              type="password"
-              name="password"
-              required placeholder="contraseña"
-              class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 sm:text-sm"
-            />
-          </div>
-        </div>
-
-        <div>
-          <label for="age" class="block text-sm font-medium text-gray-700">
-            Age
-          </label>
-          <div class="mt-1">
-            <input
-              type="number"
-              name="age"
-              required placeholder="edad"
-              class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 sm:text-sm"
-            />
-          </div>
-        </div>
-        
-             
-             
-          <button
-            type="submit"
-            class="w-full flex justify-center py-2 px-4 border border-black rounded-md shadow-sm text-sm font-medium bg-gray-100 hover:bg-gray-300"
-          >
-            REGISTRARSE
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
-</div> --}}
-
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+</head>
+<body>
+ <h1>Registro de usuarios</h1>
 <form action="/api/sessions/register" method="POST">
-    <h1>Registro de usuarios</h1>
+    
     <label for="first_name">Nombre:</label>
     <input type="text" id="first_name" name="first_name" placeholder="Nombre" required>
     <br><br>
@@ -114,7 +18,8 @@
     <br><br>
 
     <label for="email">Correo electrónico:</label>
-    <input type="email" id="email" name="email" placeholder="Correo electrónico" required>
+    <input type="email" id="email" name="email" placeholder="Correo electrónico" required
+    pattern=" ^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)$">
     <br><br>
 
     <label for="age">Edad:</label>
@@ -126,4 +31,8 @@
     <br><br>
 
     <button type="submit">Registrarse</button>
-</form>
+</form> 
+<p>Dispone de una cuenta? <a href="/login">Login</a></p>
+</body>
+</html>
+

@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito Compras</title>
+    <title>Carrito</title>
 </head>
 <body>
-    <h1>Seccion Carrito</h1>
+    <h1>Your Cart</h1>
     <ul id="cart-products-list">
         {{#each products}}
             <li>
@@ -16,7 +16,6 @@
         {{/each}}
     </ul>
 
-    <!-- Cambia el botón a un formulario que envía la solicitud POST al servidor -->
     <form action="/api/carts/{{cartId}}/purchase" method="POST">
         <button type="submit">Finalize Purchase</button>
     </form>

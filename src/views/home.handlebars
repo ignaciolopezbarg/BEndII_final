@@ -1,9 +1,19 @@
-<div class="contenedor-bienvenida">
-  <h1>Bienvenido !!</h1>
-  <h3>Email: {{user.email}}</h3>
-  <h3>Rol: {{user.rol}}</h3>
-</div>
-
-<form class="formulario-logout" action="/api/sessions/logout" method="POST">
-  <button type="submit">Logout</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Bienvenidos a la Tienda de Compras</h1>
+    <h2>Seleccione Carrito</h2>
+    <ul>
+      {{#each carts}}
+        <li>
+          <a href="/products?cartId={{this._id}}">Cart ID: {{this._id}}</a>
+        </li>
+      {{/each}}
+    </ul>
+</body>
+</html>

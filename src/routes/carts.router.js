@@ -1,6 +1,6 @@
 import express from 'express';
 import passport from 'passport';
-import { addProductToCart, removeProductFromCart, purchaseCart } from '../controllers/cartController.js';
+import { addProductToCart, removeProductFromCart, purchaseCart } from '../controllers/cart.controller.js';
 import { authorizeRol } from '../middleware/authorization.js';
 
 const router = express.Router();

@@ -1,7 +1,7 @@
 import express from 'express';
 import passport from 'passport';
 import { authorizeRol } from '../middleware/authorization.js';
-import { getAllProducts, createProduct, updateProduct, deleteProduct, getProductForEdit } from '../controllers/productController.js';
+import { getAllProducts, createProduct, updateProduct, deleteProduct, getProductForEdit } from '../controllers/producto.controller.js';
 
 const router = express.Router();
 
